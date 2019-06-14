@@ -1,5 +1,6 @@
 package org.ss.jpa.intro;
 
+import org.ss.jpa.intro.domain.Address;
 import org.ss.jpa.intro.domain.Contact;
 
 import javax.persistence.EntityManager;
@@ -13,15 +14,22 @@ public class App {
         EntityManager em = emf.createEntityManager();
 
         em.getTransaction().begin();
-
+/*
         Contact contact = new Contact();
-
+        contact.setEmail("azsqea@qssqsdsqd.gt");
+        contact.setFirstName("Séga");
+        contact.setAddress(new Address("105 rue de la Soif - 44000 Nantes"));
+        em.persist(contact);
+    /* */  /*
         em.find(Contact.class,6L);
         System.out.println(contact.getEmail());
 
 
         contact.setEmail("azlkje@zae.fr");
         em.persist(contact);
+        System.out.println(contact);
+*/
+        Contact contact = em.find(Contact.class, 1L);
         System.out.println(contact);
 
         em.getTransaction().commit();
